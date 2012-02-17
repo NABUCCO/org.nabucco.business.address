@@ -1,0 +1,143 @@
+/*
+* Copyright 2012 PRODYNA AG
+*
+* Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.opensource.org/licenses/eclipse-1.0.php or
+* http://www.nabucco-source.org/nabucco-license.html
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+package org.nabucco.business.address.facade.service.maintain; 
+
+import org.nabucco.business.address.facade.message.EmailAddressListMsg;
+import org.nabucco.business.address.facade.message.EmailAddressMsg;
+import org.nabucco.business.address.facade.message.PhoneAddressListMsg;
+import org.nabucco.business.address.facade.message.PhoneAddressMsg;
+import org.nabucco.business.address.facade.message.PostBoxAddressListMsg;
+import org.nabucco.business.address.facade.message.PostBoxAddressMsg;
+import org.nabucco.business.address.facade.message.PostalAddressListMsg;
+import org.nabucco.business.address.facade.message.PostalAddressMsg;
+import org.nabucco.business.address.facade.message.WebAddressListMsg;
+import org.nabucco.business.address.facade.message.WebAddressMsg;
+import org.nabucco.framework.base.facade.exception.service.MaintainException;
+
+@Author         Nicolas Moser
+@Company        PRODYNA AG
+@Date           2012-01-12
+@Version        1.0
+@Description    Maintain Service for Address Datatypes.
+public Service MaintainAddress {
+
+
+	/* Email Address */
+		
+    @ManualImplementation
+	@JoinPoint				org.nabucco.aspect.permissioning
+	@JoinPoint				org.nabucco.aspect.validating
+	@JoinPoint				org.nabucco.aspect.relating
+	@JoinPoint				org.nabucco.aspect.resolving
+	@JoinPoint				org.nabucco.aspect.journaling
+	@Description			Maintains a single email address.
+	public EmailAddressMsg maintainEmailAddress(EmailAddressMsg msg) throws MaintainException;
+		
+    @ManualImplementation
+	@JoinPoint				org.nabucco.aspect.permissioning
+	@JoinPoint				org.nabucco.aspect.validating
+	@JoinPoint				org.nabucco.aspect.relating
+	@JoinPoint				org.nabucco.aspect.resolving
+	@JoinPoint				org.nabucco.aspect.journaling
+	@Description			Maintains a list of email addresses.
+	public EmailAddressListMsg maintainEmailAddressList(EmailAddressListMsg msg) throws MaintainException;
+
+
+	/* Postal Address */
+
+    @ManualImplementation
+	@JoinPoint				org.nabucco.aspect.permissioning
+	@JoinPoint				org.nabucco.aspect.validating
+	@JoinPoint				org.nabucco.aspect.relating
+	@JoinPoint				org.nabucco.aspect.resolving
+	@JoinPoint				org.nabucco.aspect.journaling
+	@Description			Maintains a single postal address.
+	public PostalAddressMsg maintainPostalAddress(PostalAddressMsg msg) throws MaintainException;
+
+    @ManualImplementation
+	@JoinPoint				org.nabucco.aspect.permissioning
+	@JoinPoint				org.nabucco.aspect.validating
+	@JoinPoint				org.nabucco.aspect.relating
+	@JoinPoint				org.nabucco.aspect.resolving
+	@JoinPoint				org.nabucco.aspect.journaling
+	@Description			Maintains a list of postal addresses.
+	public PostalAddressListMsg maintainPostalAddressList(PostalAddressListMsg msg) throws MaintainException;
+
+
+	/* Post Box Address */
+
+    @ManualImplementation
+	@JoinPoint				org.nabucco.aspect.permissioning
+	@JoinPoint				org.nabucco.aspect.validating
+	@JoinPoint				org.nabucco.aspect.relating
+	@JoinPoint				org.nabucco.aspect.resolving
+	@JoinPoint				org.nabucco.aspect.journaling
+	@Description			Maintains a single post box address.
+	public PostBoxAddressMsg maintainPostBoxAddress(PostBoxAddressMsg msg) throws MaintainException;
+
+    @ManualImplementation
+	@JoinPoint				org.nabucco.aspect.permissioning
+	@JoinPoint				org.nabucco.aspect.validating
+	@JoinPoint				org.nabucco.aspect.relating
+	@JoinPoint				org.nabucco.aspect.resolving
+	@JoinPoint				org.nabucco.aspect.journaling
+	@Description			Maintains a list of post box addresses.
+	public PostBoxAddressListMsg maintainPostBoxAddressList(PostBoxAddressListMsg msg) throws MaintainException;
+
+
+	/* Phone Address */
+
+	@ManualImplementation
+	@JoinPoint				org.nabucco.aspect.permissioning
+	@JoinPoint				org.nabucco.aspect.validating
+	@JoinPoint				org.nabucco.aspect.relating
+	@JoinPoint				org.nabucco.aspect.resolving
+	@JoinPoint				org.nabucco.aspect.journaling
+	@Description			Maintains a single phone address.
+	public PhoneAddressMsg maintainPhoneAddress(PhoneAddressMsg msg) throws MaintainException;
+
+	@ManualImplementation
+	@JoinPoint				org.nabucco.aspect.permissioning
+	@JoinPoint				org.nabucco.aspect.validating
+	@JoinPoint				org.nabucco.aspect.relating
+	@JoinPoint				org.nabucco.aspect.resolving
+	@JoinPoint				org.nabucco.aspect.journaling
+	@Description			Maintains a list of phone addresses.
+	public PhoneAddressListMsg maintainPhoneAddressList(PhoneAddressListMsg msg) throws MaintainException;
+
+
+	/* Web Address */
+
+    @ManualImplementation
+	@JoinPoint				org.nabucco.aspect.permissioning
+	@JoinPoint				org.nabucco.aspect.validating
+	@JoinPoint				org.nabucco.aspect.relating
+	@JoinPoint				org.nabucco.aspect.resolving
+	@JoinPoint				org.nabucco.aspect.journaling
+	@Description			Maintains a single web address.
+	public WebAddressMsg maintainWebAddress(WebAddressMsg msg) throws MaintainException;
+
+    @ManualImplementation
+	@JoinPoint				org.nabucco.aspect.permissioning
+	@JoinPoint				org.nabucco.aspect.validating
+	@JoinPoint				org.nabucco.aspect.relating
+	@JoinPoint				org.nabucco.aspect.resolving
+	@JoinPoint				org.nabucco.aspect.journaling
+	@Description			Maintains a list of web addresses.
+	public WebAddressListMsg maintainWebAddressList(WebAddressListMsg msg) throws MaintainException;
+
+}

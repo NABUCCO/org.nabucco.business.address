@@ -1,0 +1,92 @@
+/*
+* Copyright 2012 PRODYNA AG
+*
+* Licensed under the Eclipse Public License (EPL), Version 1.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.opensource.org/licenses/eclipse-1.0.php or
+* http://www.nabucco-source.org/nabucco-license.html
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+package org.nabucco.business.address.facade.service.resolve; 
+
+import org.nabucco.business.address.facade.message.EmailAddressMsg;
+import org.nabucco.business.address.facade.message.PhoneAddressMsg;
+import org.nabucco.business.address.facade.message.PostBoxAddressMsg;
+import org.nabucco.business.address.facade.message.PostalAddressMsg;
+import org.nabucco.business.address.facade.message.WebAddressMsg;
+import org.nabucco.business.address.facade.message.resolve.ResolveDefaultPostalAddressRq;
+import org.nabucco.business.address.facade.message.resolve.ResolveDatatypeListRq;
+import org.nabucco.business.address.facade.message.resolve.ResolveDatatypeListRs;
+import org.nabucco.framework.base.facade.exception.service.ResolveException;
+
+@Author         Nicolas Moser
+@Company        PRODYNA AG
+@Date           2012-01-12
+@Version        1.0
+@Description    Resolve Service for Address Datatypes.
+public Service ResolveAddress {
+
+    @ManualImplementation
+	@JoinPoint		org.nabucco.aspect.permissioning
+	@JoinPoint		org.nabucco.aspect.validating
+	@JoinPoint		org.nabucco.aspect.constraining
+	@JoinPoint		org.nabucco.aspect.resolving
+	@Description	Resolves a single email address.
+	public EmailAddressMsg resolveEmailAddress(EmailAddressMsg msg) throws ResolveException;
+
+    @ManualImplementation
+	@JoinPoint		org.nabucco.aspect.permissioning
+	@JoinPoint		org.nabucco.aspect.validating
+	@JoinPoint		org.nabucco.aspect.constraining
+	@JoinPoint		org.nabucco.aspect.resolving
+	@Description	Resolves a single postal address.
+	public PostalAddressMsg resolvePostalAddress(PostalAddressMsg msg) throws ResolveException;
+
+    @ManualImplementation
+	@JoinPoint		org.nabucco.aspect.permissioning
+	@JoinPoint		org.nabucco.aspect.validating
+	@JoinPoint		org.nabucco.aspect.constraining
+	@JoinPoint		org.nabucco.aspect.resolving
+	@Description	Resolves a single post box address.
+	public PostBoxAddressMsg resolvePostBoxAddress(PostBoxAddressMsg msg) throws ResolveException;
+
+    @ManualImplementation
+	@JoinPoint		org.nabucco.aspect.permissioning
+	@JoinPoint		org.nabucco.aspect.validating
+	@JoinPoint		org.nabucco.aspect.constraining
+	@JoinPoint		org.nabucco.aspect.resolving
+	@Description	Resolves a single phone address.
+	public PhoneAddressMsg resolvePhoneAddress(PhoneAddressMsg msg) throws ResolveException;
+		
+    @ManualImplementation
+	@JoinPoint		org.nabucco.aspect.permissioning
+	@JoinPoint		org.nabucco.aspect.validating
+	@JoinPoint		org.nabucco.aspect.constraining
+	@JoinPoint		org.nabucco.aspect.resolving
+	@Description	Resolves a single web address.
+	public WebAddressMsg resolveWebAddress(WebAddressMsg msg) throws ResolveException;
+
+	@ManualImplementation
+	@JoinPoint		org.nabucco.aspect.permissioning
+	@JoinPoint		org.nabucco.aspect.validating
+	@JoinPoint		org.nabucco.aspect.constraining
+	@JoinPoint		org.nabucco.aspect.resolving
+	@Description	Resolves a list of address datatypes.
+	public ResolveDatatypeListRs resolveDatatypeList(ResolveDatatypeListRq rq) throws ResolveException;
+
+	@ManualImplementation
+	@JoinPoint		org.nabucco.aspect.permissioning
+	@JoinPoint		org.nabucco.aspect.validating
+	@JoinPoint		org.nabucco.aspect.constraining
+	@JoinPoint		org.nabucco.aspect.resolving
+	@Description	Resolves the default postal address.
+	public PostalAddressMsg resolveDefaultPostalAddress(ResolveDefaultPostalAddressRq rq) throws ResolveException;
+
+}
